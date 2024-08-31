@@ -1,0 +1,109 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Barlow', sans-serif; /* Apply Barlow font globally */
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+/* Registration Form Container */
+.registration-form {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 10px;
+    max-width: 900px;
+    margin: 20px auto;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Heading */
+.registration-form .heading {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Fieldset Styling */
+.registration-form fieldset {
+    border: none;
+    margin-bottom: 20px;
+}
+
+/* Legend Styling */
+.registration-form legend {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #10a37f;
+}
+
+/* Label Styling */
+.registration-form label {
+    display: block;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+/* Input, Select, and Textarea Styling */
+.registration-form input, 
+.registration-form select, 
+.registration-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+/* Focus Styling */
+.registration-form input:focus, 
+.registration-form select:focus, 
+.registration-form textarea:focus {
+    outline: none;
+    box-shadow: 0 0 5px #ff6384;
+    transform: scale(1.05);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Submit Button Styling */
+.registration-form button[type="submit"] {
+    background-color: #fc9003;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    padding: 15px 30px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    display: block;
+    margin: 0 auto;
+}
+
+.registration-form button[type="submit"]:hover {
+    background-color: #fc9003;
+    transform: scale(1.05);
+}
+/* Toast Notification */
+.toast {
+    position: fixed;
+    top: 20px;
+    right: 90px;
+    background-color: #10a37f;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    display: none;
+    z-index: 1000;
+}
+
+.toast.show {
+    display: block;
+}

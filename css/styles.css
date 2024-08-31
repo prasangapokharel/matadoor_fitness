@@ -1,0 +1,312 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
+body {
+    font-family: 'Barlow', sans-serif; /* Apply Barlow font globally */
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+/* Welcome Banner */
+/* .welcome-banner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
+    background-image: url('../images/bb.svg'); 
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    position: relative;
+} */
+.welcome-banner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
+    background-image: linear-gradient(to right top, #ffcc00, #ff8641,  #3e2c4d, #232a42, #16242f, #161b1d, #21282a, #2e3638, #3a4545, #485453);    color: white;
+    text-align: center;
+    position: relative;
+}
+
+.welcome-banner h1 {
+    font-family: "Anton", sans-serif;
+    letter-spacing: 0.3rem;
+    font-size: 3rem;
+    margin: 0;
+
+    animation: pulse 2s ease-in-out infinite;
+}
+.welcome-banner h2{
+    font-family: "Anton", sans-serif;
+    letter-spacing: 0.3rem;
+    font-size: 2rem;
+    margin: 0;
+color: #fc9003;
+    animation: pulse 4s ease-in-out infinite;
+}
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+/* Membership Section */
+.membership-section {
+    padding: 50px 0;
+    background-color: #f7f8fa;
+    text-align: center;
+}
+
+.membership-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #333;
+    text-transform: uppercase;
+}
+
+.membership-section p {
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+    color: #666;
+}
+
+.membership-cards {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background-color: #fff;
+    padding: 20px;
+    text-align: left;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    width: 280px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+
+.card.highlight {
+    background: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+}
+
+.card.highlight .price {
+    color: #000000;
+}
+
+.card .best-value {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: #ffffff;
+    color: rgb(9, 0, 0);
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.card h3 {
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.card p {
+    color: #666;
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+.card .price {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.card button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: rgb(255, 255, 255);
+    background-color: #fc9003;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.card.highlight button {
+    background-color: #fc9003;
+    color: #ffffff;
+}
+
+.card button:hover {
+    background-color: #4e1485;
+}
+
+.card.highlight button:hover {
+    background-color: #ffcc00;
+    color: #6a1b9a;
+}
+/* Team Section */
+.team-section {
+    padding: 50px 0;
+    background-color: #f7f8fa;
+    text-align: center;
+}
+
+.team-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #333;
+    text-transform: uppercase;
+}
+
+.team-cards {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.team-card {
+    /* background-color: #fff; */
+    padding: 20px;
+    border-radius: 10px;
+    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+    width: 280px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-image {
+    width: 80%;
+    height: 200px; /* Fixed height for images */
+    object-fit: cover; /* Ensures the image covers the entire area */
+    border-radius: 100%;
+}
+
+.team-info {
+    padding: 15px 0;
+}
+
+.team-info h3 {
+    font-size: 1.6rem;
+    margin-bottom: 5px;
+}
+
+.team-info p {
+    color: #666;
+    font-size: 1rem;
+    margin: 5px 0;
+}
+
+.team-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+/* Showcase Section */
+.showcase-section {
+    padding: 50px 0;
+    background-color: #f0f0f0; /* Light background to contrast with the team section */
+    text-align: center;
+}
+
+.showcase-section h2 {
+    font-size: 2.5rem;
+    color: #333;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.showcase-section p {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 40px;
+}
+
+.showcase-gallery {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.showcase-card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 280px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.showcase-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 1px;
+    margin-bottom: 15px;
+}
+
+.showcase-card p {
+    font-size: 1rem;
+    color: #666;
+}
+
+/* Hover effects for showcase cards */
+.showcase-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+/* Location Section Styling */
+.location-section {
+   
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #f7f8fa;
+}
+
+.location-section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.map-container {
+    margin-bottom: 20px;
+  
+
+}
+div.map-container{
+    border: 2px;
+    border-radius: 12px;
+}
+.direction-button {
+    display: inline-block;
+    background-color: #fc9003;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.direction-button:hover {
+    background-color: #000000;
+}
