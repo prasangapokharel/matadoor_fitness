@@ -5,11 +5,12 @@ window.addEventListener('load', function () {
     const toast = document.getElementById('toast');
 
     if (status === 'success') {
-        toast.textContent = 'Registration successful!';
+        toast.textContent = 'Registration successful! You will receive a call soon.';
         toast.classList.add('show');
         setTimeout(() => {
             toast.classList.remove('show');
-        }, 3000); // Hide toast after 3 seconds
+        }, 3000); // Hide toast after 3 seconds$ pear install foo
+
     } else if (status === 'error') {
         toast.textContent = 'Registration failed. Please try again.';
         toast.classList.add('show');

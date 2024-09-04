@@ -1,0 +1,6 @@
+# .htaccess
+RewriteEngine On
+
+
+# Redirect requests to the appropriate PHP files
+RewriteRule ^([a-zA-Z0-9_-]+)$ $1.php [L]

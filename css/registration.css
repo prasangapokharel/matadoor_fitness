@@ -14,11 +14,11 @@ body {
 
 /* Registration Form Container */
 .registration-form {
-    background-color: #ffffff;
-    padding: 40px;
+    background-color: #ffffff00;
+    padding: 40px 20px;
     border-radius: 10px;
-    max-width: 900px;
-    margin: 20px auto;
+    max-width: 100%; /* Full width for responsiveness */
+    margin: 20px 20px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
@@ -34,6 +34,7 @@ body {
 .registration-form fieldset {
     border: none;
     margin-bottom: 20px;
+    padding: 0; /* Remove padding for better alignment */
 }
 
 /* Legend Styling */
@@ -42,6 +43,17 @@ body {
     font-weight: bold;
     margin-bottom: 10px;
     color: #10a37f;
+    position: relative; /* For absolute positioning of the live effect */
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: #e0f7fa; /* Light background for the legend */
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Live Effect for Legend */
+.registration-form legend:hover {
+    background-color: #b2dfdb; /* Change background on hover */
+    color: #00695c; /* Change text color on hover */
 }
 
 /* Label Styling */
@@ -88,14 +100,15 @@ body {
 }
 
 .registration-form button[type="submit"]:hover {
-    background-color: #fc9003;
+    background-color: #f57f17; /* Darker shade on hover */
     transform: scale(1.05);
 }
+
 /* Toast Notification */
 .toast {
     position: fixed;
     top: 20px;
-    right: 90px;
+    right: 20px; /* Adjusted for better visibility */
     background-color: #10a37f;
     color: #fff;
     padding: 10px 20px;
@@ -106,4 +119,20 @@ body {
 
 .toast.show {
     display: block;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .registration-form {
+        padding: 20px;
+        margin: 10px;
+    }
+
+    .registration-form .heading {
+        font-size: 24px;
+    }
+
+    .registration-form button[type="submit"] {
+        width: 100%;
+    }
 }

@@ -1,3 +1,5 @@
+<?php include 'includes/cookies.php'; ?>
+
 <!-- contact.php -->
 <!DOCTYPE html>
 <html lang="en">

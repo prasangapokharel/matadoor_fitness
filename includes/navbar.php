@@ -1,4 +1,3 @@
-<!-- includes/navbar.php -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -43,8 +42,7 @@
         .navbar-menu li a {
             text-decoration: none;
             color: #333;
-            font-size: 16px;
-            font-weight: 500;
+            font-size: 12.63px;
         }
 
         .navbar-menu li a:hover {
@@ -67,7 +65,9 @@
             cursor: pointer;
             transition: background-color 0.3s ease;
         }
-
+a.call-now-btn{
+    font-weight: 500;
+}
         .call-now-btn:hover {
             background-color: #000000;
         }
@@ -125,9 +125,12 @@
         </div>
         <button class="menu-toggle" onclick="toggleMenu()"><i class="fa fa-bars"></i></button>
         <ul class="navbar-menu">
-            <li><a href="index.php">Home</a></li>
-            <li><a href="registration.php">Registration</a></li>
-            <li><a href="contact.php">Contact Us</a></li>
+            <li><a href="index">Home</a></li>
+            <li><a href="registration">Registration</a></li>
+            <li><a href="event">Events</a></li>
+
+            <li><a href="faqs">FAQ</a></li>
+            <li><a href="contact">Contact Us</a></li>
             <li><a href="tel:+9811388848" class="call-now-btn">Call Now <i class="fa-solid fa-phone fa-shake"></i></a></li>
         </ul>
        

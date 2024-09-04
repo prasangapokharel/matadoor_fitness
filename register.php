@@ -31,9 +31,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->bind_param("sssssssssssssss", $full_name, $dob, $gender, $contact_number, $email, $address, $emergency_name, $emergency_phone, $emergency_relationship, $fitness_level, $health_conditions, $fitness_goals, $membership_type, $training_sessions, $referral_source);
 
     if ($stmt->execute()) {
-        header("Location: registration.php?status=success");
+        header("Location: registration?status=success");
     } else {
-        header("Location: registration.php?status=error");
+        header("Location: registration?status=error");
     }
 
     $stmt->close();
