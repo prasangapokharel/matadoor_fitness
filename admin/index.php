@@ -1,4 +1,3 @@
-<!-- admin/index.php -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,19 +7,14 @@
     <!-- Include Tailwind CSS -->
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <!-- Include ApexCharts -->
-    <link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css"
->
+    <!-- Include ApexCharts (remove if not needed) -->
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
-    <!-- Include hs-apexcharts-helpers.js -->
+    <!-- Include hs-apexcharts-helpers.js (remove if not needed) -->
     <script src="https://preline.co/assets/js/hs-apexcharts-helpers.js"></script>
 </head>
 <body class="bg-gray-100 flex">
 
 <?php include('includes/sidebar.php'); ?>
-
 
 <!-- Main Content -->
 <div class="flex-1 p-6">
@@ -77,15 +71,62 @@
             <a href="contact.php" class="text-white mt-4 block text-sm">View Details <i class="fa fa-angle-right"></i></a>
         </div>
 
-        <!-- Add more cards here for additional metrics -->
+        <!-- Card for Total Income -->
+        <div class="bg-green-500 text-white p-6 rounded-lg shadow-lg">
+            <div class="flex justify-between items-center">
+                <div>
+                    <h5 class="text-lg font-medium">Total Income</h5>
+                    <h2 class="text-4xl font-bold mt-2">
+                        <?php
+                        // Query for total income (Paid)
+                        $income_query = "SELECT SUM(plans.price) AS total_income
+                                         FROM gym_registrations
+                                         JOIN plans ON gym_registrations.plan = plans.name
+                                         WHERE gym_registrations.status = 'Paid'";
+                        $income_result = mysqli_query($conn, $income_query);
+                        $income_row = mysqli_fetch_assoc($income_result);
+                        $total_income = $income_row['total_income'];
+                        echo number_format($total_income ?? 0);
+                        ?>
+                    </h2>
+                </div>
+                <div>
+                    <i class="fa fa-wallet fa-3x"></i>
+                </div>
+            </div>
+            <a href="balance.php" class="text-white mt-4 block text-sm">View Details <i class="fa fa-angle-right"></i></a>
+        </div>
+
+        <!-- Card for Upcoming Income -->
+        <div class="bg-red-500 text-white p-6 rounded-lg shadow-lg">
+            <div class="flex justify-between items-center">
+                <div>
+                    <h5 class="text-lg font-medium">Upcoming Income</h5>
+                    <h2 class="text-4xl font-bold mt-2">
+                        <?php
+                        // Query for upcoming income (Unpaid)
+                        $upcoming_query = "SELECT SUM(plans.price) AS upcoming_income
+                                           FROM gym_registrations
+                                           JOIN plans ON gym_registrations.plan = plans.name
+                                           WHERE gym_registrations.status = 'Unpaid'";
+                        $upcoming_result = mysqli_query($conn, $upcoming_query);
+                        $upcoming_row = mysqli_fetch_assoc($upcoming_result);
+                        $upcoming_income = $upcoming_row['upcoming_income'];
+                        echo number_format($upcoming_income ?? 0);
+                        ?>
+                    </h2>
+                </div>
+                <div>
+                    <i class="fa fa-calendar-alt fa-3x"></i>
+                </div>
+            </div>
+            <a href="balance.php" class="text-white mt-4 block text-sm">View Details <i class="fa fa-angle-right"></i></a>
+        </div>
+
+        <!-- Add more cards here for additional metrics if needed -->
     </div>
-
-  
-
 </div>
 
-<script src="js/chart.js">
-
-</script>
+<script src="js/chart.js"></script>
 </body>
 </html>

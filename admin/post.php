@@ -22,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Validate file upload
     if (!empty($imagePath)) {
         // Allow only certain file formats
-        $allowedTypes = array("jpg", "jpeg", "png", "gif");
+        $allowedTypes = array("jpg", "jpeg", "png", "gif", "mp4");
         if (in_array($imageFileType, $allowedTypes)) {
             // Upload file to server
             if (move_uploaded_file($_FILES["image"]["tmp_name"], $targetFilePath)) {
