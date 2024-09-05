@@ -14,12 +14,11 @@
 
 <?php include('includes/sidebar.php'); ?>
 
-<!-- Main Content -->
 <div class="flex-1 p-6">
     <div class="mb-4 flex justify-between items-center">
         <h1 class="text-2xl font-semibold">Users</h1>
         <!-- New Admission Button -->
-        <button id="newAdmissionBtn" class="bg-green-500 text-white px-4 py-2 rounded">New Admission</button>
+        <a href="add_user.php" class="bg-green-500 text-white px-4 py-2 rounded">New Admission</a>
     </div>
 
     <!-- Users Table -->
@@ -41,24 +40,36 @@
                 // Include database connection
                 include 'includes/db_connect.php';
 
-                // Fetch users from the database
-                $query = "SELECT id, full_name, email, contact_number, plan, status, DATEDIFF(end_date, CURDATE()) AS days_left FROM gym_registrations";
+                // Fetch users with their respective plans
+                $query = "SELECT gym_registrations.id, gym_registrations.full_name, gym_registrations.email, gym_registrations.contact_number, gym_registrations.plan, gym_registrations.status, gym_registrations.start_date, gym_registrations.end_date, plans.name AS plan_name 
+                          FROM gym_registrations 
+                          LEFT JOIN plans ON gym_registrations.plan = plans.name";
                 $result = mysqli_query($conn, $query);
 
                 while ($row = mysqli_fetch_assoc($result)) {
-                    // Display each user with days left
+                    // Calculate days left based on plan and status
+                    $daysLeft = 'N/A';
+                    if ($row['status'] == 'Paid') {
+                        if ($row['end_date']) {
+                            $daysLeft = max(0, (strtotime($row['end_date']) - time()) / (60 * 60 * 24));
+                        }
+                    }
+
                     echo "<tr>
                             <td class='py-2 px-4 border-b'>{$row['full_name']}</td>
                             <td class='py-2 px-4 border-b'>{$row['email']}</td>
                             <td class='py-2 px-4 border-b'>{$row['contact_number']}</td>
-                            <td class='py-2 px-4 border-b'>{$row['plan']}</td>
+                            <td class='py-2 px-4 border-b'>{$row['plan_name']}</td>
                             <td class='py-2 px-4 border-b'>{$row['status']}</td>
-                            <td class='py-2 px-4 border-b'>" . ($row['days_left'] > 0 ? $row['days_left'] . " days" : "Expired") . "</td>
+                            <td class='py-2 px-4 border-b'>" . ($daysLeft !== 'N/A' ? $daysLeft . " days" : $daysLeft) . "</td>
                             <td class='py-2 px-4 border-b'>
                                 <button class='bg-blue-500 text-white px-4 py-1 rounded view-btn' data-id='{$row['id']}'>View</button>
                             </td>
                         </tr>";
                 }
+
+                // Close the connection
+                mysqli_close($conn);
                 ?>
             </tbody>
         </table>
@@ -90,7 +101,7 @@
                     <label for="plan" class="block text-gray-700">Plan</label>
                     <select id="plan" name="plan" class="w-full p-2 border rounded" required>
                         <option value="Monthly">Monthly - 1,500 Rs</option>
-                        <option value="6 Month">6 Month - 5,000 Rs</option>
+                        <option value="6 months">6 months - 5,000 Rs</option>
                         <option value="Yearly">Yearly - 10,000 Rs</option>
                     </select>
                 </div>
@@ -134,7 +145,7 @@ $(document).ready(function() {
         $.ajax({
             url: 'get_user_details.php',
             method: 'POST',
-            data: {id: userId},
+            data: { id: userId },
             success: function(response) {
                 $('#userDetails').html(response);
                 $('#userModal').removeClass('hidden');

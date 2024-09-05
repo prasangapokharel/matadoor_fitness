@@ -2,7 +2,7 @@
 // admin/post.php
 
 // Include database connection
-include './includes/db_connect.php';
+include 'includes/db_connect.php';
 
 // Initialize variables
 $errorMessage = "";
@@ -43,6 +43,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $errorMessage = "Please select an image to upload.";
     }
 }
+
+// Fetch existing events from the database
+$sql = "SELECT * FROM events ORDER BY created_at DESC";
+$result = $conn->query($sql);
 ?>
 
 <!DOCTYPE html>
@@ -66,7 +70,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </script>
 </head>
 
-<body class="bg-gray-100">
+<body class="bg-gray-100 flex">
 <?php include('includes/sidebar.php'); ?>
 
 <div class="max-w-2xl mx-auto p-6 bg-white shadow-md rounded-lg mt-10 mb-10">
@@ -94,6 +98,42 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Post Event</button>
         </div>
     </form>
+</div>
+
+<div class="max-w-4xl mx-auto p-6 bg-white shadow-md rounded-lg mt-10 mb-10">
+    <h2 class="text-2xl font-bold mb-6">Manage Events</h2>
+
+    <table class="min-w-full bg-white">
+        <thead class="bg-gray-800 text-white">
+            <tr>
+                <th class="w-1/4 py-2">Image</th>
+                <th class="w-1/2 py-2">Description</th>
+                <th class="w-1/4 py-2">Actions</th>
+            </tr>
+        </thead>
+        <tbody class="text-gray-700">
+            <?php if ($result && $result->num_rows > 0) { ?>
+                <?php while ($row = $result->fetch_assoc()) { ?>
+                    <tr class="border-t">
+                        <td class="py-2 px-4">
+                            <img src="../uploads/<?php echo htmlspecialchars($row['image_path']); ?>" alt="Event Image" class="w-20 h-20 rounded">
+                        </td>
+                        <td class="py-2 px-4">
+                            <?php echo htmlspecialchars($row['description']); ?>
+                        </td>
+                        <td class="py-2 px-4">
+                            <a href="event/edit_event.php?id=<?php echo $row['id']; ?>" class="text-blue-500 hover:text-blue-700">Edit</a> | 
+                            <a href="event/delete_event.php?id=<?php echo $row['id']; ?>" class="text-red-500 hover:text-red-700" onclick="return confirm('Are you sure you want to delete this event?');">Delete</a>
+                        </td>
+                    </tr>
+                <?php } ?>
+            <?php } else { ?>
+                <tr>
+                    <td colspan="3" class="text-center py-4">No events found.</td>
+                </tr>
+            <?php } ?>
+        </tbody>
+    </table>
 </div>
 
 </body>

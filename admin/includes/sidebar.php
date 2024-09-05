@@ -1,33 +1,66 @@
-<!-- Sidebar -->
-<div class="w-64 bg-white shadow-md h-screen border-r border-gray-200 rounded-tr-lg rounded-br-lg flex flex-col">
-    <div class="p-4 flex items-center border-b border-gray-200">
-        <img src="../images/logo.png" alt="Matadoor Fitness Logo" class="h-12 w-12 object-cover rounded-full">
-        <span class="ml-2 text-lg font-semibold">Matadoor Fitness</span>
+<link rel="stylesheet" href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" />
+
+<div class="min-h-screen flex flex-row bg-gray-100">
+  <div class="flex flex-col w-56 bg-white rounded-r-3xl overflow-hidden">
+    <div class="flex items-center justify-center h-20 shadow-md">
+      <h1 class="text-3xl uppercase text-indigo-500">Matadoor</h1>
     </div>
-    <nav class="flex-1 mt-4">
-        <a href="index.php" class="flex items-center py-1.5 px-4 hover:bg-gray-200 transition rounded-lg">
-            <i class="fas fa-tachometer-alt mr-2"></i>
-            <span>Dashboard</span>
+    <ul class="flex flex-col py-4">
+    <li>
+                    <a href="index.php" class="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-gray-500 hover:text-gray-800">
+                        <span class="inline-flex items-center justify-center h-12 w-12 text-lg text-gray-400"><i class="bx bx-home"></i></span>
+                        <span class="text-sm font-medium">Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="users.php" class="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-gray-500 hover:text-gray-800">
+                        <span class="inline-flex items-center justify-center h-12 w-12 text-lg text-gray-400"><i class="bx bx-group"></i></span>
+                        <span class="text-sm font-medium">Users</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="gallerypost.php" class="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-gray-500 hover:text-gray-800">
+                        <span class="inline-flex items-center justify-center h-12 w-12 text-lg text-gray-400"><i class="bx bx-image"></i></span>
+                        <span class="text-sm font-medium">Gallery</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="contact.php" class="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-gray-500 hover:text-gray-800">
+                        <span class="inline-flex items-center justify-center h-12 w-12 text-lg text-gray-400"><i class="bx bx-envelope"></i></span>
+                        <span class="text-sm font-medium">Contacts</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="post.php" class="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-gray-500 hover:text-gray-800">
+                        <span class="inline-flex items-center justify-center h-12 w-12 text-lg text-gray-400"><i class="bx bx-edit"></i></span>
+                        <span class="text-sm font-medium">New Post</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="plan.php" class="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-gray-500 hover:text-gray-800">
+                        <span class="inline-flex items-center justify-center h-12 w-12 text-lg text-gray-400"><i class="bx bx-dollar"></i></span>
+                        <span class="text-sm font-medium">Create Plan</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="Planview.php" class="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-gray-500 hover:text-gray-800">
+                        <span class="inline-flex items-center justify-center h-12 w-12 text-lg text-gray-400"><i class="bx bx-list-ul"></i></span>
+                        <span class="text-sm font-medium">Available Plans</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="site_setting.php" class="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-gray-500 hover:text-gray-800">
+                        <span class="inline-flex items-center justify-center h-12 w-12 text-lg text-gray-400"><i class="bx bx-cog"></i></span>
+                        <span class="text-sm font-medium">Site Settings</span>
+                    </a>
+                </li>
+      <li>
+        <a href="#" class="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-gray-500 hover:text-gray-800">
+          <span class="inline-flex items-center justify-center h-12 w-12 text-lg text-gray-400"><i class="bx bx-log-out"></i></span>
+          <span class="text-sm font-medium">Logout</span>
         </a>
-        <a href="users.php" class="flex items-center py-2.5 px-4 hover:bg-gray-200 transition rounded-lg">
-            <i class="fas fa-users mr-2"></i>
-            <span>Users</span>
-        </a>
-        <a href="gallerypost.php" class="flex items-center py-2.5 px-4 hover:bg-gray-200 transition rounded-lg">
-            <i class="fas fa-images mr-2"></i>
-            <span>Gallery</span>
-        </a>
-        <a href="contact.php" class="flex items-center py-2.5 px-4 hover:bg-gray-200 transition rounded-lg">
-            <i class="fas fa-address-book mr-2"></i>
-            <span>Contacts</span>
-        </a>
-        <a href="post.php" class="flex items-center py-2.5 px-4 hover:bg-gray-200 transition rounded-lg">
-            <i class="fas fa-address-book mr-2"></i>
-            <span>New Post</span>
-        </a>
-        <!-- Add more navigation links here -->
-    </nav>
+      </li>
+    </ul>
+  </div>
 </div>
 
-<!-- Include FontAwesome for icons -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/js/all.min.js"></script>
