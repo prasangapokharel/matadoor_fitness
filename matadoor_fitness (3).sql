@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 05, 2024 at 01:15 PM
+-- Generation Time: Sep 06, 2024 at 08:43 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -121,7 +121,37 @@ CREATE TABLE `gym_registrations` (
 INSERT INTO `gym_registrations` (`id`, `full_name`, `dob`, `gender`, `contact_number`, `email`, `address`, `emergency_name`, `emergency_phone`, `emergency_relationship`, `fitness_level`, `health_conditions`, `fitness_goals`, `membership_type`, `training_sessions`, `referral_source`, `created_at`, `plan`, `status`, `start_date`, `end_date`, `days_left`, `duration`) VALUES
 (43, 'Upton Adams', '0000-00-00', 'male', '+1 (286) 987-29', 'kegune@mailinator.com', '', '', '', '', 'beginner', NULL, NULL, 'monthly', 'personal', '', '2024-09-05 11:04:17', 'monthly', 'Paid', NULL, '2024-10-05', 0, NULL),
 (44, 'Russell Lopez', '0000-00-00', 'male', '+1 (339) 597-75', 'kujuq@mailinator.com', '', '', '', '', 'beginner', NULL, NULL, 'monthly', 'personal', '', '2024-09-05 11:05:00', 'yearly', 'Paid', NULL, '2025-09-05', 0, NULL),
-(45, 'Sahil Malik', '0000-00-00', 'male', '984456334', 'Mohhamad@gmail.com', '', '', '', '', 'beginner', NULL, NULL, 'monthly', 'personal', '', '2024-09-05 11:11:45', 'monthly', 'Paid', NULL, '2024-10-05', 0, NULL);
+(45, 'Sahil Malik', '0000-00-00', 'male', '984456334', 'Mohhamad@gmail.com', '', '', '', '', 'beginner', NULL, NULL, 'monthly', 'personal', '', '2024-09-05 11:11:45', 'monthly', 'Paid', NULL, '2024-10-05', 0, NULL),
+(46, 'Gage Gonzalez', '2017-10-30', 'other', '+1 (529) 447-39', 'gonafon@mailinator.com', 'Ullam maiores volupt', 'Venus Watson', '+1 (838) 386-51', 'Velit dolor dolore ', 'beginner', 'Enim sint et magnam ', 'Ea reprehenderit tem', 'family', 'group', 'Cum inventore error ', '2024-09-05 14:11:08', '', 'Paid', NULL, NULL, 0, NULL),
+(47, 'Prasanga Raman Pokharel', '0000-00-00', 'male', '9765470926', 'prasangaramanpokharel@gmail.com', '', '', '', '', 'beginner', NULL, NULL, 'monthly', 'personal', '', '2024-09-05 14:37:23', 'yearly', 'Paid', NULL, '2025-09-05', 0, NULL),
+(48, 'Prasanga Raman Pokharel', '0000-00-00', 'male', '982233567', 'incpractical@gmail.com', '', '', '', '', 'beginner', NULL, NULL, 'monthly', 'personal', '', '2024-09-06 06:17:52', '', 'Paid', NULL, '2024-09-06', 0, NULL),
+(49, 'Keefe Mclaughlin', '2016-12-24', 'female', '+1 (805) 493-72', 'ruzez@mailinator.com', 'Quod nulla ea vitae ', 'Roary Brown', '+1 (242) 134-76', 'Duis minim voluptate', 'advanced', 'Vel natus cillum sun', 'Iusto labore enim no', 'family', 'group', 'Architecto fugiat ex', '2024-09-06 06:19:11', 'monthly', 'Unpaid', NULL, NULL, 0, NULL),
+(50, 'Joy Parker', '2002-09-02', 'other', '+1 (403) 402-22', 'xetavytan@mailinator.com', 'Sunt perspiciatis e', 'Elliott Palmer', '+1 (178) 108-49', 'Corrupti velit porr', 'intermediate', 'Tenetur exercitation', 'Optio suscipit magn', 'family', 'personal', 'Saepe pariatur Qui ', '2024-09-06 06:19:34', 'monthly', 'Paid', NULL, NULL, 0, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `payment_methods`
+--
+
+CREATE TABLE `payment_methods` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `logo` varchar(255) NOT NULL,
+  `currency` varchar(10) NOT NULL,
+  `qr_code` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `payment_methods`
+--
+
+INSERT INTO `payment_methods` (`id`, `name`, `logo`, `currency`, `qr_code`) VALUES
+(1, 'Khalti', 'download (3).png', 'NPR', NULL),
+(2, 'Khalti', 'download (3).png', 'NPR', NULL),
+(3, 'Khalti', 'download (3).png', 'NPR', NULL),
+(4, 'Khalti', 'download (3).png', 'NPR', NULL),
+(5, 'Esewa', 'download esewa.jpeg', 'NPR', 'images333.png');
 
 -- --------------------------------------------------------
 
@@ -143,7 +173,8 @@ CREATE TABLE `plans` (
 
 INSERT INTO `plans` (`id`, `name`, `price`, `type`, `created_at`) VALUES
 (9, 'Monthly', 1500.00, '', '2024-09-05 11:03:58'),
-(10, 'Yearly', 10000.00, '', '2024-09-05 11:04:49');
+(10, 'Yearly', 10000.00, '', '2024-09-05 11:04:49'),
+(12, 'Weekly', 300.00, '', '2024-09-06 06:17:30');
 
 -- --------------------------------------------------------
 
@@ -209,6 +240,12 @@ ALTER TABLE `gym_registrations`
   ADD UNIQUE KEY `email` (`email`);
 
 --
+-- Indexes for table `payment_methods`
+--
+ALTER TABLE `payment_methods`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `plans`
 --
 ALTER TABLE `plans`
@@ -240,7 +277,7 @@ ALTER TABLE `contacts`
 -- AUTO_INCREMENT for table `events`
 --
 ALTER TABLE `events`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `gallery_posts`
@@ -252,13 +289,19 @@ ALTER TABLE `gallery_posts`
 -- AUTO_INCREMENT for table `gym_registrations`
 --
 ALTER TABLE `gym_registrations`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
+
+--
+-- AUTO_INCREMENT for table `payment_methods`
+--
+ALTER TABLE `payment_methods`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `plans`
 --
 ALTER TABLE `plans`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `reviews`
