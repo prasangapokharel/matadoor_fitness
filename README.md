@@ -13,7 +13,7 @@
 ##  Step-6 Open url 
 ```bash localhost/matadoor-fitness/index.php ```
 
-    ### Admin
+    localhost/matadoor-fitness/admin/index.php
 ```bash localhost/matadoor-fitness/admin/index.php ```
 
 
