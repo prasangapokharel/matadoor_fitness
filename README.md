@@ -5,15 +5,15 @@
 ## Step-3 Paste `` https://github.com/prasangapokharel/matadoor_fitness.git ``
 
 ## Step-4 Create Database Name 
-```bash matadoor_fitness ```
+    matadoor_fitness 
 
 ## Step-5 Import 
 ```bash matadoor_fitness (5).sql ``` in Mysql admim.
 
 ##  Step-6 Open url 
-```bash localhost/matadoor-fitness/index.php ```
 
-    localhost/matadoor-fitness/admin/index.php
-```bash localhost/matadoor-fitness/admin/index.php ```
+    localhost/matadoor-fitness/index.php
+    
+    localhost/matadoor-fitness/admin/index.php 
 
 
