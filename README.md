@@ -2,7 +2,8 @@
 
 ## Step-2 Open Terminal in opened Vs code 
 
-## Step-3 Paste `` https://github.com/prasangapokharel/matadoor_fitness.git ``
+## Step-3 Paste 
+    git clone https://github.com/prasangapokharel/matadoor_fitness.git
 
 ## Step-4 Create Database Name 
     matadoor_fitness 
