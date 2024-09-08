@@ -21,7 +21,7 @@ if (isset($_GET['delete_id'])) {
 }
 
 // Fetch plans from the database
-$sql = "SELECT id, name, price, type FROM plans";
+$sql = "SELECT id, name, price, duration FROM plans";
 $result = $conn->query($sql);
 ?>
 
@@ -61,7 +61,7 @@ $result = $conn->query($sql);
                             <tr class="w-full bg-gray-200 border-b border-gray-300">
                                 <th class="py-3 px-6 text-left text-gray-600">Name</th>
                                 <th class="py-3 px-6 text-left text-gray-600">Price</th>
-                                <th class="py-3 px-6 text-left text-gray-600">Type</th>
+                                <th class="py-3 px-6 text-left text-gray-600">Duration</th>
                                 <th class="py-3 px-6 text-left text-gray-600">Actions</th>
                             </tr>
                         </thead>
@@ -71,10 +71,10 @@ $result = $conn->query($sql);
                                     <tr class="border-b border-gray-300">
                                         <td class="py-3 px-6"><?php echo htmlspecialchars($row['name']); ?></td>
                                         <td class="py-3 px-6"><?php echo htmlspecialchars($row['price']); ?></td>
-                                        <td class="py-3 px-6"><?php echo htmlspecialchars($row['type']); ?></td>
+                                        <td class="py-3 px-6"><?php echo htmlspecialchars($row['duration']); ?></td>
                                         <td class="py-3 px-6">
                                             <a href="?delete_id=<?php echo $row['id']; ?>" 
-                                               class="text-red-500 hover:text-red-700 font-bold" 
+                                               class="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 shadow-lg shadow-red-500/50 dark:shadow-lg dark:shadow-red-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2" 
                                                onclick="return confirm('Are you sure you want to delete this plan?');">
                                                 Delete
                                             </a>

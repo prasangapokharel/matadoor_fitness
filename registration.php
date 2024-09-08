@@ -5,11 +5,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gym Registration - Matadoor Fitness</title>
+    <?php include 'includes/site.php'; ?>
+
     <link rel="stylesheet" href="css/registration.css">
     <link rel="stylesheet" href="css/footer.css">
-    <link href="./css/tailwind/talwind.css" rel="stylesheet">
-
+    <link href="./css/tailwind/tailwind.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOMI/IFGURTr5eof4y5boF5JeLv5st4/+Ppddz6" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
@@ -44,19 +44,6 @@
 
                 <label for="address">Address:</label>
                 <textarea id="address" name="address" rows="3" required></textarea>
-            </fieldset>
-
-            <!-- Emergency Contact Information -->
-            <fieldset>
-                <legend>Emergency Contact Information</legend>
-                <label for="emergency-name">Emergency Contact Name:</label>
-                <input type="text" id="emergency-name" name="emergency-name" required>
-
-                <label for="emergency-phone">Emergency Contact Phone Number:</label>
-                <input type="tel" id="emergency-phone" name="emergency-phone" required>
-
-                <label for="emergency-relationship">Emergency Contact Relationship:</label>
-                <input type="text" id="emergency-relationship" name="emergency-relationship" required>
             </fieldset>
 
             <!-- Health and Fitness Information -->
@@ -99,7 +86,6 @@
             <button type="submit">Apply Now</button>
 
         </form>
-
     </div>
     <div id="toast" class="toast"></div>
 

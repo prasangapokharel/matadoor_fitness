@@ -27,7 +27,7 @@ $result = mysqli_query($conn, $query);
             <table class="min-w-full bg-white">
                 <thead>
                     <tr>
-                        <th class="text-left py-3 px-4">Name</th>
+                        <th class=" font-bold text-left py-3 px-4">Name</th>
                         <th class="text-left py-3 px-4">Logo</th>
                         <th class="text-left py-3 px-4">Currency</th>
                         <th class="text-left py-3 px-4">QR Code</th>
@@ -36,14 +36,14 @@ $result = mysqli_query($conn, $query);
                 <tbody>
                     <?php while ($row = mysqli_fetch_assoc($result)): ?>
                         <tr>
-                            <td class="py-3 px-4"><?php echo $row['name']; ?></td>
+                            <td class="font-semibold py-3 px-4"><?php echo $row['name']; ?></td>
                             <td class="py-3 px-4">
                                 <img src="payments/<?php echo $row['logo']; ?>" alt="<?php echo $row['name']; ?>" width="50">
                             </td>
                             <td class="py-3 px-4"><?php echo $row['currency']; ?></td>
                             <td class="py-3 px-4">
                                 <!-- Button trigger modal -->
-                                <button type="button" class="bg-blue-500 text-white px-4 py-2 rounded-lg" onclick="openModal('qrModal<?php echo $row['id']; ?>')">
+                                <button type="button" class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 shadow-lg shadow-blue-500/50 dark:shadow-lg dark:shadow-blue-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2" onclick="openModal('qrModal<?php echo $row['id']; ?>')">
                                     View QR Code
                                 </button>
 

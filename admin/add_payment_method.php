@@ -1,3 +1,5 @@
+<?php include 'includes/session.php'; ?>
+
 <?php
 // Initialize $successMessage to prevent undefined variable warning
 $successMessage = ""; 
@@ -10,8 +12,8 @@ $successMessage = "";
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Payment Method</title>
     <!-- Tailwind CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-</head>
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.css" rel="stylesheet" />
+    </head>
 <?php include('includes/sidebar.php'); ?>
 
 <body class="bg-gray-100 flex">
@@ -37,7 +39,7 @@ $successMessage = "";
             <!-- Payment Logo -->
             <div class="mb-4">
                 <label for="logo" class="block text-gray-700 font-medium">Payment Method Logo</label>
-                <input type="file" id="logo" name="logo" class="w-full p-2 border border-gray-300 rounded-lg" required>
+                <input type="file" id="logo" name="logo" class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" required>
             </div>
 
             <!-- Currency -->
@@ -54,12 +56,12 @@ $successMessage = "";
             <!-- QR Code Upload -->
             <div class="mb-4">
                 <label for="qr_code" class="block text-gray-700 font-medium">QR Code</label>
-                <input type="file" id="qr_code" name="qr_code" class="w-full p-2 border border-gray-300 rounded-lg">
+                <input type="file" id="qr_code" name="qr_code" class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400">
             </div>
 
             <!-- Submit Button -->
             <div class="flex justify-center">
-                <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-lg">Add Payment Method</button>
+                <button type="submit" class="text-white bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 m-full">Add Payment Method</button>
             </div>
         </form>
     </div>

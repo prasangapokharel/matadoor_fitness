@@ -43,6 +43,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Gallery Post</title>
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.css" rel="stylesheet" />
+
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
 
@@ -56,7 +58,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <div class="container mx-auto">
                 <h1 class="text-3xl font-bold text-center mb-6">Add New Gallery Post</h1>
                 <div class="flex justify-center">
-                    <div class="w-full max-w-lg bg-white shadow-md rounded-lg p-6">
+                    <div class="w-full max-w-3xl bg-white shadow-md rounded-lg p-6">
                         <?php if (isset($successMessage)) { ?>
                             <div class="mb-4 p-4 bg-green-200 text-green-800 border border-green-300 rounded">
                                 <?php echo $successMessage; ?>
@@ -70,16 +72,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
                         <form action="gallerypost.php" method="post" enctype="multipart/form-data">
                             <div class="mb-4">
-                                <label for="image" class="block text-gray-700 text-sm font-bold mb-2">Image:</label>
-                                <input type="file" name="image" id="image" class="form-input w-full border-gray-300 rounded-lg bg-gray-50 text-gray-700 py-2 px-3" required>
-                            </div>
+                            <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="user_avatar">Upload image</label>
+                            <input type="file" name="image" id="image" class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" required>
+                            <div class="mt-1 text-sm text-gray-500 dark:text-gray-300" id="user_avatar_help">We accept image format which must be in .jpg .png .jpeg</div>
+
+                        </div>
 
                             <div class="mb-4">
                                 <label for="description" class="block text-gray-700 text-sm font-bold mb-2">Description:</label>
                                 <textarea name="description" id="description" rows="4" class="form-textarea w-full border-gray-300 rounded-lg bg-gray-50 text-gray-700 py-2 px-3" required></textarea>
                             </div>
 
-                            <button type="submit" class="w-full py-2 px-4 bg-blue-500 text-white font-bold rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">Submit</button>
+                            <button type="submit" class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 shadow-lg shadow-blue-500/50 dark:shadow-lg dark:shadow-blue-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 w-full">Submit</button>
                         </form>
                     </div>
                 </div>

@@ -1,3 +1,5 @@
+<?php include 'includes/session.php'; ?>
+
 <?php
 // Include your database connection file
 include 'includes/db_connect.php';
@@ -6,13 +8,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Retrieve form data
     $name = $_POST['name'];
     $price = $_POST['price'];
-    $type = $_POST['type']; // This will be 'Monthly', 'Weekly', or 'Yearly'
+    $duration = $_POST['duration']; // This will be the number of days
 
     // Validate input (basic example)
-    if (!empty($name) && !empty($price) && !empty($type)) {
+    if (!empty($name) && !empty($price) && !empty($duration)) {
         // Prepare SQL statement
-        $stmt = $conn->prepare("INSERT INTO plans (name, price, type) VALUES (?, ?, ?)");
-        $stmt->bind_param("ssd", $name, $price, $type);
+        $stmt = $conn->prepare("INSERT INTO plans (name, price, duration) VALUES (?, ?, ?)");
+        $stmt->bind_param("sdi", $name, $price, $duration);
 
         // Execute the statement
         if ($stmt->execute()) {
@@ -71,17 +73,12 @@ $conn->close();
             </div>
 
             <div class="mb-4">
-                <label for="type" class="block text-gray-700 font-semibold">Plan Type:</label>
-                <select id="type" name="type" class="w-full p-2 border border-gray-300 rounded" required>
-                    <option value="">Select Plan Type</option>
-                    <option value="Monthly">Monthly</option>
-                    <option value="Weekly">Weekly</option>
-                    <option value="Yearly">Yearly</option>
-                </select>
+                <label for="duration" class="block text-gray-700 font-semibold">Duration (in days):</label>
+                <input type="number" id="duration" name="duration" class="w-full p-2 border border-gray-300 rounded" required>
             </div>
 
             <div class="text-center">
-                <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Add Plan</button>
+                <button type="submit" class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 shadow-lg shadow-blue-500/50 dark:shadow-lg dark:shadow-blue-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2  w-full">Add Plan</button>
             </div>
         </form>
     </div>

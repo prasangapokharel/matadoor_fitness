@@ -26,11 +26,31 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 400px;
+    height: 400px; /* You can adjust this for larger screens */
     background-image: url(../images/up.svg);
+    background-size: cover; /* Ensures the background image covers the entire area */
+    background-position: center; /* Centers the background image */
     text-align: center;
     position: relative;
+    width: 100%;
 }
+
+/* Responsive adjustments */
+@media (max-width: 760px) {
+    .welcome-banner {
+        height: 250px; /* Adjust height for smaller screens */
+        background-size: contain; /* Ensures the image scales well on smaller screens */
+    }
+
+    .welcome-banner h1 {
+        font-size: 2rem; /* Smaller font size for mobile view */
+    }
+
+    .welcome-banner h2 {
+        font-size: 1.5rem; /* Adjust font size for mobile */
+    }
+}
+
 
 .welcome-banner h1 {
     font-family: "Anton", sans-serif;

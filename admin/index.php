@@ -1,3 +1,5 @@
+<?php include 'includes/session.php'; ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,6 +15,7 @@
     <script src="https://preline.co/assets/js/hs-apexcharts-helpers.js"></script>
 </head>
 <body class="bg-gray-100 flex">
+<?php include('includes/full.php'); ?>
 
 <?php include('includes/sidebar.php'); ?>
 
@@ -35,7 +38,7 @@
                         include 'includes/db_connect.php';
 
                         // Fetch users count from the database
-                        $query = "SELECT COUNT(*) as count FROM gym_registrations"; // Updated table name
+                        $query = "SELECT COUNT(*) as count FROM gym_registrations";
                         $result = mysqli_query($conn, $query);
                         $row = mysqli_fetch_assoc($result);
                         echo $row['count'];
@@ -81,7 +84,7 @@
                         // Query for total income (Paid)
                         $income_query = "SELECT SUM(plans.price) AS total_income
                                          FROM gym_registrations
-                                         JOIN plans ON gym_registrations.plan = plans.name
+                                         JOIN plans ON gym_registrations.plan_name = plans.name
                                          WHERE gym_registrations.status = 'Paid'";
                         $income_result = mysqli_query($conn, $income_query);
                         $income_row = mysqli_fetch_assoc($income_result);
@@ -107,7 +110,7 @@
                         // Query for upcoming income (Unpaid)
                         $upcoming_query = "SELECT SUM(plans.price) AS upcoming_income
                                            FROM gym_registrations
-                                           JOIN plans ON gym_registrations.plan = plans.name
+                                           JOIN plans ON gym_registrations.plan_name = plans.name
                                            WHERE gym_registrations.status = 'Unpaid'";
                         $upcoming_result = mysqli_query($conn, $upcoming_query);
                         $upcoming_row = mysqli_fetch_assoc($upcoming_result);

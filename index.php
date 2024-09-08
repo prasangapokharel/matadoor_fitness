@@ -1,5 +1,7 @@
 <?php include 'includes/store.php'; ?>
 <?php include 'includes/cookies.php'; ?>
+<?php include 'includes/visit.php'; ?>
+
 
 <?php
 // Include your database connection
