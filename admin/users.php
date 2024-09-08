@@ -7,9 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Users - Admin Panel</title>
     <!-- Include Tailwind CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.0/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 
@@ -58,7 +59,7 @@
 
     <!-- Users Table -->
     <div class="bg-white p-4 rounded-lg shadow-lg">
-        <table id="users-table" class="min-w-full bg-white">
+        <table id="users-table" class="min-w-5/6 bg-white">
             <thead class="bg-gray-200 text-gray-600">
                 <tr>
 

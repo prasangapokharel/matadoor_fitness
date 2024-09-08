@@ -7,11 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard</title>
     <!-- Include Tailwind CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.0/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <!-- Include ApexCharts (remove if not needed) -->
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
     <!-- Include hs-apexcharts-helpers.js (remove if not needed) -->
+
     <script src="https://preline.co/assets/js/hs-apexcharts-helpers.js"></script>
 </head>
 <body class="bg-gray-100 flex">

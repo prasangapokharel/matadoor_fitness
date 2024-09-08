@@ -14,9 +14,9 @@
         }
     </style>
 </head>
-<body class="bg-black-100 flex">
+<body class="bg-gray-100 flex">
     <!-- Toggle Button -->
-    <button id="toggle-btn" class="p-3 bg-gray-700 text-white top-8 left-9 z-50">
+    <button id="toggle-btn" class="p-3 bg-black-700 text-gray rounded-full fixed top-10 left-20 z-90">
         <i class="bx bx-menu"></i>
     </button>
 
@@ -61,6 +61,18 @@
                             <a href="gallerypost.php" class="flex items-center h-12 px-4 text-gray-500 hover:text-gray-800 transition-transform ease-in duration-200">
                                 <span class="inline-flex items-center justify-center h-12 w-12 text-lg text-gray-400"><i class="bx bx-image"></i></span>
                                 <span class="text-sm font-medium">Gallery</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="membership_add.php" class="flex items-center h-12 px-4 text-gray-500 hover:text-gray-800 transition-transform ease-in duration-200">
+                                <span class="inline-flex items-center justify-center h-12 w-12 text-lg text-gray-400"><i class="bx bx-id-card"></i></span>
+                                <span class="text-sm font-medium">Membership</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="viewmembership.php" class="flex items-center h-12 px-4 text-gray-500 hover:text-gray-800 transition-transform ease-in duration-200">
+                                <span class="inline-flex items-center justify-center h-12 w-12 text-lg text-gray-400"><i class="bx bx-edit"></i></span>
+                                <span class="text-sm font-medium">View</span>
                             </a>
                         </li>
                     </ul>
@@ -136,40 +148,24 @@
                     </ul>
                 </div>
 
-                <!-- Settings Section -->
+                <!-- Logout Section -->
                 <div class="px-4">
-                    <h2 class="text-xs font-semibold text-gray-600 uppercase">Settings</h2>
                     <ul class="space-y-1">
                         <li>
-                            <a href="site_setting.php" class="flex items-center h-12 px-4 text-gray-500 hover:text-gray-800 transition-transform ease-in duration-200">
-                                <span class="inline-flex items-center justify-center h-12 w-12 text-lg text-gray-400"><i class="bx bx-cog"></i></span>
-                                <span class="text-sm font-medium">Site Settings</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="analytics.php" class="flex items-center h-12 px-4 text-gray-500 hover:text-gray-800 transition-transform ease-in duration-200">
-                                <span class="inline-flex items-center justify-center h-12 w-12 text-lg text-gray-400"><i class="bx bx-chart"></i></span>
-                                <span class="text-sm font-medium">Analytics</span>
+                            <a href="logout.php" class="flex items-center h-12 px-4 text-gray-500 hover:text-gray-800 transition-transform ease-in duration-200">
+                                <span class="inline-flex items-center justify-center h-12 w-12 text-lg text-gray-400"><i class="bx bx-log-out"></i></span>
+                                <span class="text-sm font-medium">Logout</span>
                             </a>
                         </li>
                     </ul>
                 </div>
             </div>
         </div>
-
-        <!-- Main Content -->
-        <div class="flex-1 p-8">
-            <!-- Your main content here -->
-        </div>
     </div>
 
-    <!-- JavaScript for Toggle Functionality -->
     <script>
-        const toggleBtn = document.getElementById('toggle-btn');
-        const sidebar = document.getElementById('sidebar');
-
-        toggleBtn.addEventListener('click', () => {
-            sidebar.classList.toggle('sidebar-hidden');
+        document.getElementById('toggle-btn').addEventListener('click', function() {
+            document.getElementById('sidebar').classList.toggle('sidebar-hidden');
         });
     </script>
 </body>
