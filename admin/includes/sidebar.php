@@ -55,12 +55,12 @@
 
                 <!-- Gallery Section -->
                 <div class="px-4">
-                    <h2 class="text-xs font-semibold text-gray-600 uppercase">Gallery</h2>
+                    <h2 class="text-xs font-semibold text-gray-600 uppercase">Content</h2>
                     <ul class="space-y-1">
                         <li>
                             <a href="gallerypost.php" class="flex items-center h-12 px-4 text-gray-500 hover:text-gray-800 transition-transform ease-in duration-200">
                                 <span class="inline-flex items-center justify-center h-12 w-12 text-lg text-gray-400"><i class="bx bx-image"></i></span>
-                                <span class="text-sm font-medium">Gallery</span>
+                                <span class="text-sm font-medium">Features</span>
                             </a>
                         </li>
                         <li>
@@ -152,7 +152,7 @@
                 <div class="px-4">
                     <ul class="space-y-1">
                         <li>
-                            <a href="logout.php" class="flex items-center h-12 px-4 text-gray-500 hover:text-gray-800 transition-transform ease-in duration-200">
+                            <a href="./authentication/adminlogin.php" class="flex items-center h-12 px-4 text-gray-500 hover:text-gray-800 transition-transform ease-in duration-200">
                                 <span class="inline-flex items-center justify-center h-12 w-12 text-lg text-gray-400"><i class="bx bx-log-out"></i></span>
                                 <span class="text-sm font-medium">Logout</span>
                             </a>

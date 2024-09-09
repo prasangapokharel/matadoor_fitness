@@ -59,7 +59,7 @@
 
     <!-- Users Table -->
     <div class="bg-white p-4 rounded-lg shadow-lg">
-        <table id="users-table" class="min-w-5/6 bg-white">
+        <table id="users-table" class="min-w-full bg-white">
             <thead class="bg-gray-200 text-gray-600">
                 <tr>
 
